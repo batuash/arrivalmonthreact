@@ -5,25 +5,31 @@ const TIME_ZONE = 'Europe/Berlin';
 
 const Button = ({text, onClick, ...props}) => <button onClick={onClick} > {text} </button>
 
+const Date = () => <div className="date">
+  <Clock
+    format={'D'}
+    timezone={TIME_ZONE}
+    className="clock"
+  />
+</div>
+
+const Time = () => <div className="time">
+  <Clock
+    format={'HH:mm'}
+    ticking={true}
+    timezone={TIME_ZONE}
+    className="clock"
+  />
+</div>
+
 const Body = () => (
   <div className="body">
-    <div className="date">
-      <Clock
-        format={'D'}
-        timezone={TIME_ZONE}
-        className="clock"
-      />
-    </div>
-    <div className="time">
-      <Clock
-        format={'HH:mm'}
-        ticking={true}
-        timezone={TIME_ZONE}
-        className="clock"
-      />
-    </div>
+    <Date />
+    <Time />
     <div>
-      <Button text={'Enter'} onClick={() => console.log('clicked')}/>
+      <div className="enterBtn" onClick={() => console.log('clicked')}>
+        <span>Enter</span>
+      </div>
     </div>
   </div>
 );

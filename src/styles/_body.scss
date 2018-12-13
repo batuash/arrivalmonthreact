@@ -3,9 +3,34 @@
 .body {
     width: 500px;
     height: 500px;
-    border: 1px solid red;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 100px;
 
-    .clock {
-      color: green;
+    .date {
+        font-size: 50px;
+        padding: 15px 0px;
+    }
+
+    .time {
+        padding-bottom: 10px;
+    }
+
+    .enterBtn {
+        padding: 5px 15px;
+        border-radius: 5px;
+        background-color: lightskyblue;
+        color: black;
+
+        &:hover {
+          background-color: lightblue;
+        }
+
+        &:active {
+          border: 1px solid slategray;
+        }
     }
 }
