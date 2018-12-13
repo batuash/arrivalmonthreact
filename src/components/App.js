@@ -1,8 +1,13 @@
 import React from 'react';
-import Message from './Message';
+import Body from './Body';
 
-const App = () => <div>
-  <Message />
-</div>;
+const App = () => (
+  <div className="container">
+    <div className="main">
+      <Body />
+    </div>
+    <div className="footer" />
+  </div>
+);
 
 export default App;
