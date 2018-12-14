@@ -1,11 +1,15 @@
+import { ADD_TIMESTAMP } from '../actions';
+
 const initialState = {
-  message: 'hello world'
+  timeStamps: []
 };
 
 export { initialState };
 
 const app = (state = initialState, { type, ...payload }) => {
   switch (type) {
+    case ADD_TIMESTAMP:
+      return { timeStamps: [...state.timeStamps, payload.timeStamp] };
     default:
       return state;
   }

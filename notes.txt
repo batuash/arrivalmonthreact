@@ -13,3 +13,4 @@ Goals:
 Add pagination
 Make it desktop compatible
 Add server side
+Add tests
