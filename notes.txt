@@ -1,16 +1,21 @@
 Assignments:
 
-Add enter screen
-1. first mobile screen: day, time and a button.
-2. add basic styling
+  *** In progress ***
+      - Search for test utilities
 
-Add logic to enter screen
-1. add save current day logic
-2. save current date and hours
-3. link to a day to a Month
+  *** Goals ***
+      - Add pagination
+      - Make it desktop compatible
+      - Add server side
+      - Add tests
+      - Add jest
 
-Goals:
-Add pagination
-Make it desktop compatible
-Add server side
-Add tests
+  *** Done ***
+      - Add enter screen
+          1. first mobile screen: day, time and a button.
+          2. add basic styling
+
+      - Add logic to enter screen
+          1. add save current day logic
+          2. save current date and hours
+          3. link to a day to a Month

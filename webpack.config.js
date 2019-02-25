@@ -23,7 +23,8 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: [require.resolve('babel-preset-react-app')]
+            presets: ['env', 'react'],
+            plugins: ['transform-object-rest-spread']
           }
         }
       },
