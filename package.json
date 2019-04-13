@@ -9,7 +9,8 @@
     "start": "NODE_ENV=development webpack-dev-server --mode development",
     "build": "NODE_ENV=development webpack --mode production",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "flow": "flow"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +23,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^1.0.0",
+    "flow-bin": "^0.97.0",
     "gh-pages": "^1.2.0",
     "grunt": "^1.0.3",
     "grunt-contrib-watch": "^1.1.0",
