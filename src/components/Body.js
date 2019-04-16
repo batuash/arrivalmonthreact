@@ -1,7 +1,9 @@
+// @flow
+
 import React from 'react';
 import { connect } from 'react-redux';
 import Clock from 'react-live-clock';
-import { addTimeStamp } from '../actions';
+import { addTimeStamp, type TimeStamp } from '../actions';
 
 const TIME_ZONE = 'Europe/Berlin';
 
@@ -26,27 +28,25 @@ const Time = () => (
   </div>
 );
 
-// Users = []
-// Users -> years -> months -> days -> entries 
+const onEnterButtonClick = (): void => {
+  let date = Date.now();
+
+  addTimeStamp({
+    year: date.getFullYear(date),
+    month: date.getMonth(date),
+    date: date.getDate(date),
+    timeStamp: date.getTime(date)
+  });
+}
 
 const Body = ({ addTimeStamp }) => {
-  let dateNow = Date.now();
-  let date = new Date(Date.now());
-  console.log(date.getFullYear(date));
-  console.log(date.getMonth(date));
-  console.log(date.getDate(date));
-  console.log(date.getDay(date));
-  console.log(date.getTime(date));
-
-
-
 
   return (
     <div className="body">
       <Day />
       <Time />
       <div>
-        <div className="enterBtn" onClick={() => addTimeStamp(Date.now())}>
+        <div className="enterBtn" onClick={onEnterButtonClick}>
           <span>Enter</span>
         </div>
       </div>

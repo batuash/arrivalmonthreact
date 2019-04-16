@@ -1,11 +1,24 @@
 // @flow
 import { ADD_TIMESTAMP, type AddTimeStampAction } from '../actions';
+import { getCurrentUser } from '../selectors';
 
-const defaultUser = { id: 'default', entries: []};
+export const defaultUser = { id: 'default', entries: []};
 
-type State = {
+export type Entry = {
+  year: number,
+  month: number,
+  date: number,
+  timestamp: number
+};
+
+export type User = {
+  id: string,
+  entries: Entry[]
+};
+
+export type State = {
   timeStamps: any[],
-  users: any[]
+  users: User[]
 };
 
 export const initialState: State = {
@@ -16,7 +29,10 @@ export const initialState: State = {
 const app = (state: State = initialState, { type, ...payload }: AddTimeStampAction) => {
   switch (type) {
     case ADD_TIMESTAMP:
-      return { timeStamps: [...state.timeStamps, payload.timeStamp] };
+      let { timeStamp } = payload;
+      let currentUser = getCurrentUser(); //@todo
+      let newUsers = [ ...state.users, user]
+      return { users: [...state.timeStamps, payload.timeStamp] };
     default:
       return state;
   }
