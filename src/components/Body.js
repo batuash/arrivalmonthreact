@@ -26,7 +26,21 @@ const Time = () => (
   </div>
 );
 
+// Users = []
+// Users -> years -> months -> days -> entries 
+
 const Body = ({ addTimeStamp }) => {
+  let dateNow = Date.now();
+  let date = new Date(Date.now());
+  console.log(date.getFullYear(date));
+  console.log(date.getMonth(date));
+  console.log(date.getDate(date));
+  console.log(date.getDay(date));
+  console.log(date.getTime(date));
+
+
+
+
   return (
     <div className="body">
       <Day />

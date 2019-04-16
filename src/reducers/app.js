@@ -1,12 +1,19 @@
-import { ADD_TIMESTAMP } from '../actions';
+// @flow
+import { ADD_TIMESTAMP, type AddTimeStampAction } from '../actions';
 
-const initialState = {
-  timeStamps: []
+const defaultUser = { id: 'default', entries: []};
+
+type State = {
+  timeStamps: any[],
+  users: any[]
 };
 
-export { initialState };
+export const initialState: State = {
+  timeStamps: [],
+  users: [defaultUser]
+};
 
-const app = (state = initialState, { type, ...payload }) => {
+const app = (state: State = initialState, { type, ...payload }: AddTimeStampAction) => {
   switch (type) {
     case ADD_TIMESTAMP:
       return { timeStamps: [...state.timeStamps, payload.timeStamp] };
