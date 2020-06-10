@@ -29,10 +29,12 @@ export const initialState: State = {
 const app = (state: State = initialState, { type, ...payload }: AddTimeStampAction) => {
   switch (type) {
     case ADD_TIMESTAMP:
-      let { timeStamp } = payload;
-      let currentUser = getCurrentUser(); //@todo
-      let newUsers = [ ...state.users, user]
-      return { users: [...state.timeStamps, payload.timeStamp] };
+      const { timeStamp } = payload;
+      const currentUser = state.users[0];
+      currentUser.entries = [...currentUser.entries, timeStamp];
+
+      return { users: [currentUser] };
+
     default:
       return state;
   }
